@@ -4,8 +4,6 @@ Descrição do Projeto
 <br></br>
 Este site tem como objetivo explorar a divertida e inusitada conexão entre o icônico personagem Bart Simpson, dos Simpsons, e o Clube Athletico Paranaense. Através de uma abordagem criativa e leve, o site mergulha em um "multiverso" onde o garoto mais travesso de Springfield se torna um apaixonado torcedor do Furacão.
 <br></br>
-Objetivo:
-<br></br>
 Divertir: Criar um espaço descontraído para os fãs dos Simpsons e do Athletico Paranaense.
 <br></br>
 Engajar: Promover a interação entre os torcedores através de conteúdos divertidos e criativos.
