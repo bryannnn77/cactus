@@ -1,63 +1,195 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <title>Cactus Jack</title>
+<head>
+    <title>Cactus Jack - Athletico PR & Bart Simpson</title>
     <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw_b135evkuryi-mHvxfLUjB3rZSqHbK0TEQ&s">
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="index.css" media="screen"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  </head>
-  <body>
-    <div class="badas">
-<h1>Melhor time do Brasil</h1>
-  </div>
-  <div class="Imagens">
-    <div class="carrosel">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmbCFGbcqhfwR5_A72Lkb-QyUhnBITVgoB5g&s">
-<img src="https://i.pinimg.com/736x/df/62/07/df6207c0a57faf0768f55441abb77546.jpg">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdUJItwkrBjDblDgnBbCm_V9S0yrAK6BfQ&s">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEwsySeslCSBEBKOnK3IIi0vbL3714Rx5kkQ&s">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFflvlZsE-0IA3kHwbuZlsAsqAFEod2s1_dg&s">
-<img src="https://i.ytimg.com/vi/EV_WC0RBLaY/maxresdefault.jpg">
-<img src="https://i.ytimg.com/vi/In8yA0NpKi0/sddefault.jpg">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT-kXcYlBeANLv3I8wt_1kVhaJN-iOlZ_5jw&s">
-<img src="https://i.ytimg.com/vi/cfN_LigqHP4/default.jpg">
-</div>
-</div>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT-kXcYlBeANLv3I8wt_1kVhaJN-iOlZ_5jw&s">
-<img src="https://tiermaker.com/images/media/hero_images/2024/16838388/uncanny-bart-16838388/168383881708809671.png">
-<img src="https://i.ebayimg.com/images/g/mfwAAOSwJcNkwZyr/s-l1200.jpg">
-<img src="https://images.tcdn.com.br/img/img_prod/906555/180_camiseta_ursos_sem_curso_pardo_panda_e_polar_99_3_20201125222535.jpg">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwFVJ3wBaAdpjnDLJQwq52t_iFMGKUoiY4gA&s" height="500" width="2000" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Simpsons&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="https://logodownload.org/wp-content/uploads/2016/11/athletico-paranaense-logo-1.png" alt="Athletico PR Logo" class="logo ath-logo">
+            <img src="https://static.wikia.nocookie.net/nicos-nextbots-fanmade/images/0/08/Dud.webp/revision/latest?cb=20240126162437" alt="Bart Simpson" class="logo bart-logo">
+        </div>
+        <nav class="nav-menu">
+            <button class="hamburger-menu" aria-label="Abrir Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-list">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">Sobre Nós</a></li>
+                <li><a href="#news" class="nav-link">Notícias</a></li>
+                <li><a href="#gallery" class="nav-link">Galeria</a></li>
+                <li><a href="#history" class="nav-link">História</a></li>
+                <li><a href="#contact" class="nav-link">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <main>
+        <section class="hero-banner" id="home">
+            <div class="hero-content">
+                <h1 class="hero-title animate-in">Furacão & Bart Simpson</h1>
+                <p class="hero-subtitle animate-in delay-1">A combinação mais incrível do futebol e da cultura pop!</p>
+                <button class="cta-button animate-in delay-2" onclick="scrollToSection('about')">Saiba Mais</button>
+            </div>
+        </section>
 
+        <section class="about-section" id="about">
+            <div class="about-content">
+                <h2 class="section-title">Nossa Missão</h2>
+                <p class="about-text">Na Cactus Jack, unimos a paixão vibrante do Athletico Paranaense com a irreverência icônica de Bart Simpson. Somos uma plataforma dedicada a celebrar essa fusão única, trazendo conteúdo exclusivo, curiosidades e a energia contagiante de duas forças culturais. Nosso objetivo é criar uma comunidade engajada, onde o espírito rubro-negro encontra o humor anárquico dos Simpsons, resultando em uma experiência digital divertida e inesquecível.</p>
+                <div class="about-features">
+                    <div class="feature-item">
+                        <i class="fas fa-futbol"></i>
+                        <h3>Paixão Pelo Futebol</h3>
+                        <p>Celebramos cada gol, cada vitória e a história gloriosa do Furacão.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-star"></i>
+                        <h3>Cultura Pop</h3>
+                        <p>Exploramos o universo de Bart Simpson com humor e criatividade.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-users"></i>
+                        <h3>Comunidade</h3>
+                        <p>Construímos um espaço para fãs se conectarem e compartilharem.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="main-content">
+            <div class="badas">
+                <h2 class="main-title">Onde a Paixão Encontra a Irreverência</h2>
+                <p class="main-description">O Athletico Paranaense, conhecido como Furacão, é uma paixão que se mistura com a irreverência de Bart Simpson. Conheça essa incrível combinação que move nossa comunidade!</p>
+            </div>
 
+            <div class="carousel-container" id="gallery">
+                <div class="carrosel">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmbCFGbcqhfwR5_A72Lkb-QyUhnBITVgoB5g&s" alt="Athletico PR em campo">
+                    <img src="https://i.pinimg.com/736x/df/62/07/df6207c0a57faf0768f55441abb77546.jpg" alt="Bart Simpson skatista">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdUJItwkrBjDblDgnBbCm_V9S0yrAK6BfQ&s" alt="Torcida do Athletico PR">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEwsySeslCSBEBKOnK3IIi0vbL3714Rx5kkQ&s" alt="Mascote do Athletico PR">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFflvlZsE-0IA3kHwbuZlsAsqAFEod2s1_dg&s" alt="Jogadores do Athletico PR">
+                    <img src="https://i.ytimg.com/vi/EV_WC0RBLaY/maxresdefault.jpg" alt="Bart Simpson clássico">
+                    <img src="https://i.ytimg.com/vi/In8yA0NpKi0/sddefault.jpg" alt="Bart Simpson pensativo">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT-kXcYlBeANLv3I8wt_1kVhaJN-iOlZ_5jw&s" alt="Estádio Athletico PR">
+                    <img src="https://i.ytimg.com/vi/cfN_LigqHP4/default.jpg" alt="Bart Simpson divertido">
+                </div>
+                <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
 
+            <div class="image-grid" id="news">
+                <h2 class="section-title text-center">Últimas Notícias e Destaques</h2>
+                <div class="grid-container">
+                    <div class="grid-item news-item">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT-kXcYlBeANLv3I8wt_1kVhaJN-iOlZ_5jw&s" alt="Athletico PR em campo">
+                        <div class="grid-overlay">
+                            <h3>Furacão em Ação: Vantagem na Copa!</h3>
+                            <p>O Athletico PR garantiu uma importante vitória no primeiro jogo da Copa.</p>
+                            <button class="grid-btn" onclick="alert('Leia a notícia completa sobre a vitória do Furacão!')">Leia Mais</button>
+                        </div>
+                    </div>
+                    <div class="grid-item news-item">
+                        <img src="https://tiermaker.com/images/media/hero_images/2024/16838388/uncanny-bart-16838388/168383881708809671.png" alt="Bart Simpson meme">
+                        <div class="grid-overlay">
+                            <h3>Bart Simpson Viraliza em Novo Meme</h3>
+                            <p>A nova imagem do Bart está dominando a internet! Veja os melhores usos.</p>
+                            <button class="grid-btn" onclick="alert('Confira a galeria de memes do Bart Simpson!')">Leia Mais</button>
+                        </div>
+                    </div>
+                    <div class="grid-item news-item">
+                        <img src="https://i.ebayimg.com/images/g/mfwAAOSwJcNkwZyr/s-l1200.jpg" alt="Bart Simpson arte">
+                        <div class="grid-overlay">
+                            <h3>A Arte de Ser um Trapaceiro: Analisando Bart</h3>
+                            <p>Um olhar aprofundado sobre a personalidade e impacto cultural de Bart.</p>
+                            <button class="grid-btn" onclick="alert('Descubra mais sobre o icônico trapaceiro dos Simpsons!')">Leia Mais</button>
+                        </div>
+                    </div>
+                    <div class="grid-item news-item">
+                        <img src="https://images.tcdn.com.br/img/img_prod/906555/180_camiseta_ursos_sem_curso_pardo_panda_e_polar_99_3_20201125222535.jpg" alt="Torcida do Athletico PR festa">
+                        <div class="grid-overlay">
+                            <h3>Torcida do Furacão: A Força Rubro-Negra</h3>
+                            <p>Como a torcida do Athletico PR faz a diferença nos jogos do time.</p>
+                            <button class="grid-btn" onclick="alert('Veja vídeos e fotos da apaixonada torcida atleticana!')">Leia Mais</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<footer>
-  <div class="footercontainer">
-      <div class="icons">
-          <a href="https://www.facebook.com/?locale=pt_BR"><i class="fa-brands fa-facebook"></i></a>
-          <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://twitter.com/?lang=pt-br"><i class="fa-brands fa-twitter"></i></a>
-          <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
-      </div>
-      <div class="footerNav">
-          <ul>
-              <li><a href="">Home</a></li>
-              <li><a href="">Sobre Nós</a></li>
-              <li><a href="">Contatos</a></li>
-              <li><a href="">Nosso time</a></li>
-          </ul>
-      </div>
+        <section class="history-section parallax" id="history">
+            <div class="history-content">
+                <h2 class="history-title">Nossa História</h2>
+                <p class="history-text">A paixão pelo Athletico Paranaense e a irreverência de Bart Simpson se unem em uma história única e vibrante. Desde os campos de jogo até as telas da TV, essa combinação improvável celebra a força, a alegria e a capacidade de superar desafios, sempre com um toque de humor e originalidade. O Furacão, com sua garra e tradição, encontra em Bart a representação da ousadia e da quebra de padrões. Juntos, eles formam um time imbatível!</p>
+                <p class="history-text">O <strong>Clube Athletico Paranaense</strong>, fundado em 26 de março de 1924, é um dos clubes mais tradicionais do futebol brasileiro. Conhecido por sua camisa rubro-negra e sua apaixonada torcida, o Furacão conquistou títulos importantes, como o Campeonato Brasileiro de 2001 e a Copa Sul-Americana em 2018 e 2021, entre outros. Sua Arena da Baixada é um marco na história do futebol e um caldeirão para os adversários.</p>
+                <p class="history-text">Já <strong>Bart Simpson</strong>, o filho mais velho de Homer e Marge Simpson, é o icônico personagem da série animada "Os Simpsons", criada por Matt Groening. Com seu skate, estilingue e frases marcantes como "Ay, caramba!" e "Não coma meus shorts!", Bart é um símbolo de rebeldia, inteligência e um senso de humor único, conquistando fãs de todas as gerações e inspirando uma legião de admiradores por todo o mundo.</p>
+                <p class="history-text">Neste espaço, celebramos essa união de forças, onde a paixão pelo futebol se mistura com a cultura pop, criando um universo divertido e cheio de energia para todos os fãs do Athletico e dos Simpsons! <br> **D'oh! Vai, Furacão!**</p>
+            </div>
+        </section>
 
-  </div>
-  <div class="footerbutton">
-      <p>Copyright &copy;2024; Designed by <span class="designer">Bryan</span></p>
-  </div>
-</footer>
+        <section class="cta-section" id="contact">
+            <div class="cta-content">
+                <h2>Junte-se à nossa comunidade!</h2>
+                <p>Receba as últimas notícias sobre o Athletico PR e conteúdos exclusivos do Bart Simpson diretamente em sua caixa de entrada.</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Seu melhor e-mail" id="newsletter-email" required>
+                    <button type="submit" class="subscribe-btn">Assinar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footercontainer">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Sobre Nós</h3>
+                    <p>Unindo a paixão pelo Athletico Paranaense com a irreverência de Bart Simpson. Celebrando o melhor do futebol e da cultura pop!</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">Sobre Nós</a></li>
+                        <li><a href="#news">Notícias</a></li>
+                        <li><a href="#gallery">Galeria</a></li>
+                        <li><a href="#history">História</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua Capitão Leônidas Marques, 3144 - Curitiba, PR</p>
+                    <p><i class="fas fa-envelope"></i> contato@cactusjack.com</p>
+                    <p><i class="fas fa-phone"></i> (41) 99999-9999</p>
+                </div>
+            </div>
+            <div class="icons">
+                <a href="https://www.facebook.com/?locale=pt_BR" class="social-icon" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/" class="social-icon" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://twitter.com/?lang=pt-br" class="social-icon" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.youtube.com/" class="social-icon" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/" class="social-icon" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright ©2024; Desenvolvido por <span class="designer">Bryan</span></p>
+        </div>
+    </footer>
+
+    <button class="back-to-top" title="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,105 +1,1043 @@
-body{
-    background-image: url();
+:root {
+    --athletico-red: #D40000;
+    --athletico-dark-red: #9E0000;
+    --athletico-black: #000000;
+    --athletico-white: #FFFFFF;
+    --simpsons-yellow: #FFD90F;
+    --simpsons-blue: #1D75BB;
+    --simpsons-skin: #FFDB7D;
+    --simpsons-red: #E61E25;
+    --text-dark: #333;
+    --text-light: #555;
+    --bg-light: #f5f5f5;
+    --bg-dark: #1a1a1a;
 }
-.badas{
- text-align: center;
+
+/* Base Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
-.carrosel {
-    width: 36rem;
-    height: 23rem;
-    position: relative;
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+    scroll-behavior: smooth; /* Para rolagem suave nativa */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Cabeçalho */
+.header {
+    background: linear-gradient(135deg, var(--athletico-red) 0%, var(--athletico-dark-red) 100%);
+    padding: 0.8rem 5%;
     display: flex;
-    overflow: auto;
-    scroll-snap-type: x mandatory;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Reduzido o gap para telas menores */
+}
+
+.logo {
+    height: 55px; /* Tamanho ajustado para o header */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.08);
+    filter: brightness(1.1);
+}
+
+.ath-logo {
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.3));
+}
+
+.bart-logo {
+    border-radius: 50%; /* Torna o logo do Bart redondo */
+    object-fit: cover;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.3));
+}
+
+/* Navegação */
+.nav-menu .nav-list {
+    display: flex;
+    list-style: none;
+    gap: 25px; /* Espaçamento entre os links */
+}
+
+.nav-link {
+    color: var(--athletico-white);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden; /* Para o efeito de borda */
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.15); /* Fundo sutil no hover */
+    color: var(--simpsons-yellow);
+    transform: translateY(-2px); /* Efeito de leve elevação */
+}
+
+.nav-link::before { /* Efeito de borda amarela por baixo */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--simpsons-yellow);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-out;
+}
+
+.nav-link:hover::before {
+    transform: translateX(0);
+}
+
+.hamburger-menu {
+    display: none; /* Escondido por padrão, aparece em mobile */
+    background: transparent;
+    border: none;
+    color: var(--athletico-white);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* Hero Banner */
+.hero-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+                url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwFVJ3wBaAdpjnDLJQwq52t_iFMGKUoiY4gA&s');
+    background-size: cover;
+    background-position: center;
+    height: 90vh; /* Ajustado para cobrir mais a tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-top: 68px; /* Ajuste para o header fixo */
+    position: relative;
+    overflow: hidden; /* Para animacoes internas */
+}
+
+.hero-content {
+    max-width: 900px;
+    padding: 2rem;
+    position: relative; /* Para animacoes de elementos filhos */
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Simpsons', sans-serif;
+    text-shadow: 4px 4px 0 var(--simpsons-blue), 6px 6px 0 rgba(0,0,0,0.2); /* Sombra dupla */
+    color: var(--simpsons-yellow);
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.cta-button {
+    background-color: var(--simpsons-yellow);
+    color: var(--athletico-black);
+    border: none;
+    padding: 14px 35px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Easing mais suave */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button:hover {
+    background-color: var(--simpsons-blue);
+    color: white;
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.cta-button::after { /* Efeito de "brilho" no hover */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease-in-out;
+    transform: skewX(-20deg);
+}
+
+.cta-button:hover::after {
+    left: 100%;
+}
+
+/* Animações de entrada do Hero */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-in {
+    animation: slideInUp 1s ease-out forwards;
+    opacity: 0; /* Escondido por padrao */
+}
+
+.delay-1 { animation-delay: 0.3s; }
+.delay-2 { animation-delay: 0.6s; }
+
+/* Seção Sobre Nós */
+.about-section {
+    background-color: var(--athletico-white);
+    padding: 5rem 5%;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    color: var(--athletico-red);
+    margin-bottom: 2.5rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 5px;
+    background: linear-gradient(90deg, var(--athletico-red) 0%, var(--simpsons-yellow) 100%);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 3px;
+}
+
+.about-text {
+    font-size: 1.15rem;
+    color: var(--text-light);
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    line-height: 1.7;
+}
+
+.about-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 3rem;
+}
+
+.feature-item {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border-bottom: 4px solid var(--athletico-red);
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    border-color: var(--simpsons-blue);
+}
+
+.feature-item i {
+    font-size: 3.5rem;
+    color: var(--simpsons-yellow);
+    margin-bottom: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.feature-item:hover i {
+    color: var(--athletico-red);
+}
+
+.feature-item h3 {
+    font-size: 1.6rem;
+    color: var(--athletico-black);
+    margin-bottom: 1rem;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    color: var(--text-light);
+}
+
+
+/* Conteúdo Principal */
+.main-content {
+    padding: 5rem 5%;
+    background-color: var(--bg-light);
+}
+
+.badas {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.main-title {
+    font-size: 2.8rem;
+    color: var(--athletico-red);
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.main-title::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 5px;
+    background: linear-gradient(90deg, var(--athletico-red) 0%, var(--simpsons-yellow) 100%);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 3px;
+}
+
+.main-description {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Carrossel */
+.carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto 5rem;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    background-color: var(--athletico-white);
+}
+
+.carrosel {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); /* Easing mais suave */
+    height: 550px; /* Altura padrao */
 }
 
 .carrosel img {
-    width: 100%;
+    min-width: 100%;
     height: 100%;
-    position: sticky;
-    left: 0;
-    flex-shrink: 0;
     object-fit: cover;
-    scroll-behavior: smooth;
+    border-radius: 15px; /* Bordas arredondadas para as imagens */
 }
 
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.85);
+    border: none;
+    color: var(--athletico-red);
+    font-size: 1.8rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-btn:hover {
+    background-color: var(--athletico-red);
+    color: white;
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.prev-btn {
+    left: 25px;
+}
+
+.next-btn {
+    right: 25px;
+}
+
+/* Grid de Imagens / Notícias */
+.image-grid {
+    margin-bottom: 5rem;
+}
+
+.image-grid .section-title {
+    margin-bottom: 3.5rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.grid-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 350px; /* Altura uniforme para todos os cards */
+    display: flex;
+    flex-direction: column; /* Para conteúdo dentro do overlay */
+}
+
+.grid-item:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%; /* Ocupa todo o espaco disponivel */
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.grid-item:hover img {
+    transform: scale(1.05); /* Zoom mais sutil */
+}
+
+.grid-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9)); /* Gradiente mais escuro */
+    padding: 25px;
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.4s ease-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Conteúdo alinhado a baixo */
+    height: 100%; /* Ocupa toda a altura para o efeito */
+    pointer-events: none; /* Garante que o hover funcione no item */
+}
+
+.grid-item:hover .grid-overlay {
+    transform: translateY(0);
+    pointer-events: all; /* Ativa eventos no overlay */
+}
+
+.grid-overlay h3 {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    line-height: 1.3;
+    color: var(--simpsons-yellow);
+}
+
+.grid-overlay p {
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.grid-btn {
+    background-color: var(--simpsons-yellow);
+    color: var(--athletico-black);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-start; /* Alinha o botão à esquerda */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.grid-btn:hover {
+    background-color: var(--simpsons-blue);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Seção de História (Parallax) */
+.history-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Arena_da_Baixada_2.JPG/1200px-Arena_da_Baixada_2.JPG');
+    background-size: cover;
+    background-attachment: fixed; /* Efeito Parallax */
+    background-position: center;
+    color: white;
+    padding: 6rem 5%;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.history-content {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente para o texto */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.history-title {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    font-family: 'Simpsons', sans-serif;
+    color: var(--simpsons-yellow);
+    text-shadow: 3px 3px 0 var(--athletico-red), 5px 5px 0 rgba(0,0,0,0.3);
+    line-height: 1.2;
+}
+
+.history-text {
+    font-size: 1.1rem;
+    margin: 0 auto 1.5rem auto;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.history-text strong {
+    color: var(--simpsons-yellow);
+    font-weight: 700;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, var(--athletico-red) 0%, var(--athletico-dark-red) 100%);
+    padding: 5rem 5%;
+    text-align: center;
+    color: white;
+    margin-bottom: 0; /* Remove margem inferior para conectar com o footer */
+    box-shadow: inset 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Simpsons', sans-serif;
+    color: var(--simpsons-yellow);
+    text-shadow: 2px 2px 0 var(--athletico-black);
+}
+
+.cta-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 300;
+}
+
+.newsletter-form {
+    display: flex;
+    max-width: 550px;
+    margin: 0 auto;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 18px 25px;
+    border: none;
+    font-size: 1.1rem;
+    outline: none;
+    background-color: var(--athletico-white);
+    color: var(--text-dark);
+}
+
+.newsletter-form input::placeholder {
+    color: #888;
+}
+
+.subscribe-btn {
+    background-color: var(--simpsons-yellow);
+    color: var(--athletico-black);
+    border: none;
+    padding: 0 35px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Garante que o texto não quebre */
+}
+
+.subscribe-btn:hover {
+    background-color: var(--simpsons-blue);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Rodapé */
 footer {
-    background-color: rgb(59, 59, 59);
+    background: linear-gradient(135deg, var(--athletico-black) 0%, var(--bg-dark) 100%);
+    color: white;
+    padding-top: 4rem;
 }
 
 .footercontainer {
     width: 100%;
-    padding: 70px 30px 20px;
+    padding: 0 5% 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-bottom: 3rem;
+}
+
+.footer-about h3,
+.footer-links h3,
+.footer-contact h3 {
+    font-size: 1.7rem;
+    margin-bottom: 1.8rem;
+    color: var(--simpsons-yellow);
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.footer-about h3::after,
+.footer-links h3::after,
+.footer-contact h3::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background-color: var(--athletico-red);
+    bottom: 0;
+    left: 0;
+    border-radius: 2px;
+}
+
+.footer-about p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    position: relative;
+    padding-left: 15px;
+}
+
+.footer-links a::before {
+    content: '›'; /* Símbolo de seta */
+    position: absolute;
+    left: 0;
+    color: var(--athletico-red);
+    transition: transform 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--simpsons-yellow);
+    transform: translateX(5px);
+}
+.footer-links a:hover::before {
+    transform: translateX(5px);
+    color: var(--simpsons-yellow);
+}
+
+
+.footer-contact p {
+    margin-bottom: 18px;
+    display: flex;
+    align-items: flex-start; /* Alinha o texto com o ícone */
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-contact p i {
+    font-size: 1.2rem;
+    color: var(--athletico-red);
+    margin-top: 3px; /* Pequeno ajuste visual */
 }
 
 .icons {
     display: flex;
     justify-content: center;
+    gap: 25px;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
 }
 
-.icons a {
-    text-decoration: none;
-    padding: 10px;
-    background-color: white;
-    margin: 10px;
-    border-radius: 50%;
-}
-
-.icons a i {
-    font-size: 2em;
-    color: black;
-    opacity: 0, 9;
-}
-
-
-/* Hover Effect on social media icons */
-.icons a:hover {
-    background-color: #111;
-    transition: 0.5s;
-}
-
-.icons a:hover i {
-    color: white;
-    transition: 0.5s;
-}
-
-.footerNav {
-    margin: 30px 0;
-}
-
-.footerNav ul {
+.social-icon {
     display: flex;
+    align-items: center;
     justify-content: center;
-}
-
-.footerNav ul li a {
+    width: 55px;
+    height: 55px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
     color: white;
-    margin: 20px;
-    text-decoration: none;
-    font-size: 1.3em;
-    opacity: 0.7;
-    transition: 0.5s;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.footerNav ul li a:hover {
-    opacity: 1;
+.social-icon:hover {
+    background-color: var(--simpsons-yellow);
+    color: var(--athletico-black);
+    transform: translateY(-8px) scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-.footerbutton {
-    background-color: black;
+.footer-bottom {
+    background-color: #111;
     padding: 20px;
     text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.footerbutton p {
-    color: white;
-    font-size: 20px;
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
 }
 
 .designer {
-    opacity: 0.7;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 400;
-    margin: 0px 5px;
+    color: var(--simpsons-yellow);
+    font-weight: 600;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 55px;
+    height: 55px;
+    background-color: var(--athletico-red);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: var(--simpsons-blue);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividade (Media Queries) */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 3.8rem;
+    }
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    .carousel-container {
+        height: 450px;
+    }
+    .carrosel {
+        height: 450px;
+    }
+    .section-title, .main-title, .history-title, .cta-content h2 {
+        font-size: 2.5rem;
+    }
+    .about-text, .main-description, .history-text, .cta-content p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-wrap: wrap; /* Permite quebrar linha para o menu hamburger */
+        justify-content: center;
+        padding: 0.8rem 3%;
+    }
+
+    .logo-container {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+        gap: 10px;
+    }
+    .logo {
+        height: 50px;
+    }
+
+    .nav-menu {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end; /* Hamburger no canto */
+        position: relative;
+    }
+
+    .hamburger-menu {
+        display: block; /* Mostra o hamburger */
+    }
+
+    .nav-menu .nav-list {
+        flex-direction: column;
+        background: linear-gradient(135deg, var(--athletico-red) 0%, var(--athletico-dark-red) 100%);
+        position: absolute;
+        top: 100%; /* Abaixo do header */
+        right: 0;
+        width: 100%;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        transform: translateX(100%); /* Esconde menu para fora */
+        transition: transform 0.4s ease-out;
+        padding: 1rem 0;
+        z-index: 990;
+    }
+
+    .nav-menu.active .nav-list {
+        transform: translateX(0); /* Mostra menu */
+    }
+
+    .nav-menu .nav-list li {
+        text-align: center;
+        margin: 0.5rem 0;
+    }
+
+    .nav-link {
+        font-size: 1.1rem;
+        padding: 0.8rem 1rem;
+        display: block;
+    }
+
+    .hero-banner {
+        height: 70vh;
+        margin-top: 100px; /* Ajuste para o header em duas linhas */
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+
+    .section-title, .main-title, .history-title, .cta-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .main-content, .about-section, .history-section, .cta-section, .footercontainer {
+        padding: 3rem 5%;
+    }
+
+    .carousel-container {
+        height: 350px;
+        margin-bottom: 3rem;
+    }
+    .carrosel {
+        height: 350px;
+    }
+    .carousel-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+    .prev-btn { left: 10px; }
+    .next-btn { right: 10px; }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    .grid-item {
+        height: 300px;
+    }
+    .grid-overlay h3 {
+        font-size: 1.5rem;
+    }
+    .grid-overlay p {
+        font-size: 0.95rem;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        border-radius: 10px;
+        max-width: 350px;
+    }
+    .newsletter-form input {
+        border-radius: 8px;
+        margin-bottom: 10px;
+        text-align: center;
+        padding: 15px;
+    }
+    .subscribe-btn {
+        border-radius: 8px;
+        padding: 15px 25px;
+        width: 100%;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer-about h3::after,
+    .footer-links h3::after,
+    .footer-contact h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .footer-links ul {
+        padding: 0;
+    }
+    .footer-links a {
+        padding-left: 0; /* Remove padding */
+    }
+    .footer-links a::before {
+        display: none; /* Remove seta */
+    }
+    .footer-contact p {
+        justify-content: center;
+    }
+    .icons {
+        margin-top: 2rem;
+        gap: 15px;
+    }
+    .social-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+
+    .back-to-top {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.5rem;
+        text-shadow: 3px 3px 0 var(--simpsons-blue);
+    }
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    .cta-button {
+        font-size: 1.1rem;
+        padding: 10px 25px;
+    }
+
+    .section-title, .main-title, .history-title, .cta-content h2 {
+        font-size: 1.8rem;
+    }
+    .about-text, .main-description, .history-text, .cta-content p {
+        font-size: 1rem;
+    }
+    .feature-item h3 {
+        font-size: 1.4rem;
+    }
+    .feature-item i {
+        font-size: 2.8rem;
+    }
+
+    .carousel-container {
+        height: 250px;
+    }
+    .carrosel {
+        height: 250px;
+    }
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+
+    .grid-item {
+        height: 280px;
+    }
+    .grid-overlay h3 {
+        font-size: 1.3rem;
+    }
+    .grid-overlay p {
+        font-size: 0.9rem;
+    }
+    .grid-btn {
+        font-size: 0.9rem;
+        padding: 8px 18px;
+    }
+
+    .history-content {
+        padding: 25px;
+    }
+
+    .newsletter-form input {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+    .subscribe-btn {
+        font-size: 0.95rem;
+        padding: 12px 20px;
+    }
 }
